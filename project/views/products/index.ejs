@@ -1,0 +1,46 @@
+<%- include('../template/head.ejs'); -%>
+<%- include('../template/sidebar.ejs'); -%>
+
+<div id="content-wrapper" class="d-flex flex-column">
+    <%- include('../template/nav.ejs'); -%>
+    <div id="content">
+        <div class="container-fluid">
+         <h1 class="h3 mb-4 text-gray-800">Data Product</h1>
+         <hr>
+         <div class="card card-default">
+             <div class="card-header">
+                 <a href="/master-data/products/create" class="float-right btn btn-info">Tambah Data</a>
+                 <div class="card-title">
+                     Data Produk
+                 </div>
+             </div>
+             <div class="card-body">
+                <table class="table table-bordered">
+                     <thead>
+                             <th width="50">No</th>
+                             <th width="200">Aksi</th>
+                             <th>Nama Produk</th>
+                             <th>Stok</th>
+                             <th>Harga</th>
+                     </thead>
+                     <tbody>
+                         <% let i = 1 %>
+                         <% for(item of items) { %>
+                             <tr>
+                                 <td><%= i %></td>
+                                 <td>
+                                     <a href="/master-data/products/<%- item._id %>" class="btn btn-info "> <i class="fa fa-info"></i></a>
+                                 </td>
+                                 <td><%= item.nama %></td>
+                                 <td><%= item.harga %></td>
+                                <td><%= item.stok %></td>
+                             </tr>
+                         <% } %>
+                        
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+        </div>
+    </div>
+<%- include('../template/footer.ejs'); -%>
