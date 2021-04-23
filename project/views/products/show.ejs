@@ -1,0 +1,30 @@
+<%- include('../template/head.ejs'); -%>
+<%- include('../template/sidebar.ejs'); -%>
+
+<div id="content-wrapper" class="d-flex flex-column">
+    <%- include('../template/nav.ejs'); -%>
+    <div id="content">
+        <div class="container-fluid">
+         <h1 class="h3 mb-4 text-gray-800">Data Product</h1>
+         <hr>
+         <div class="card card-default">
+             <div class="card-header">
+                 <a href="/master-data/products" class="float-right btn btn-info"><i class="fa fa-arrow-left" ></i> Kembali Ke Daftar Produk</a>
+                 <div class="card-title">
+                     Detail Data Produk
+                 </div>
+             </div>
+             <div class="card-body">
+                <dl>
+                    <dt>Nama Produk</dt>
+                    <dd><%= item.nama %></dd>
+                    <dt>Harga Produk</dt>
+                    <dd><%= item.harga %></dd>
+                    <dt>Stok Produk</dt>
+                    <dd><%= item.stok %></dd>
+                </dl>
+             </div>
+         </div>
+        </div>
+    </div>
+<%- include('../template/footer.ejs'); -%>

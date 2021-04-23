@@ -5,11 +5,11 @@
     <%- include('../template/nav.ejs'); -%>
     <div id="content">
         <div class="container-fluid">
-         <h1 class="h3 mb-4 text-gray-800">Data Product</h1>
+         <h1 class="h3 mb-4 text-gray-800">Data Produk</h1>
          <hr>
          <div class="card card-default">
              <div class="card-header">
-                 <a href="/master-data/products/create" class="float-right btn btn-info">Tambah Data</a>
+                 <a href="/master-data/products/create" class="float-right btn btn-info"> <i class="fa fa-plus"></i> Tambah Data</a>
                  <div class="card-title">
                      Data Produk
                  </div>
@@ -29,13 +29,15 @@
                              <tr>
                                  <td><%= i %></td>
                                  <td>
-                                     <a href="/master-data/products/<%- item._id %>" class="btn btn-info "> <i class="fa fa-info"></i></a>
-                                 </td>
+                                     <a href="/master-data/products/<%- item._id %>" class="btn btn-info "> <i class="fa fa-info"></i> </a>
+                                    <a href="/master-data/products/<%- item._id %>/edit" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
+                                    <a onclick="return confirm('Yakin Menghapus Data Ini')" href="/master-data/products/<%- item._id %>/delete" class="btn btn-danger"> <i class="fa fa-trash"></i> </a>
+                                </td>
                                  <td><%= item.nama %></td>
                                  <td><%= item.harga %></td>
                                 <td><%= item.stok %></td>
                              </tr>
-                         <% } %>
+                         <% i++ } %>
                         
                      </tbody>
                  </table>

@@ -10,26 +10,26 @@
          <div class="card card-default">
              <div class="card-header">
                  <div class="card-title">
-                     Tambah Data Produk
+                    Edit Data Produk
                  </div>
              </div>
              <div class="card-body">
-                <form action="/master-data/products" method="post">
+                <form action="/master-data/products/<%= item._id %>" method="post">
                 <div class="form-group">
                     <label for="" class="control-label">Nama Produk</label>
-                    <input type="text" name="nama" class="form-control">
+                    <input type="text" name="nama" value="<%= item.nama %>" class="form-control">
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <label for="" class="control-label">Harga</label>
-                            <input type="number" name="harga" class="form-control">
+                            <input type="number" name="harga" value="<%= item.harga %>" class="form-control">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="" class="control-label">Stok</label>
-                            <input type="number" name="stok" class="form-control">
+                            <input type="number" name="stok" value="<%= item.stok %>" class="form-control">
                         </div>
                     </div>
                 </div>
